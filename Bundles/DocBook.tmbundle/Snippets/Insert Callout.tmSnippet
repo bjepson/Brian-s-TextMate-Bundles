@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;co id="${1:TK}_co" linkends="${1:TK}"/&gt;</string>
+	<key>keyEquivalent</key>
+	<string>@!</string>
+	<key>name</key>
+	<string>Insert Callout</string>
+	<key>scope</key>
+	<string>text.xml</string>
+	<key>uuid</key>
+	<string>F03E283D-E6D9-4670-8244-73B00C8356DA</string>
+</dict>
+</plist>

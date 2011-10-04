@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;callout arearefs="${1:TK}_co" id="${1:TK}"&gt;
+$TM_SELECTED_TEXT
+&lt;/callout&gt;</string>
+	<key>keyEquivalent</key>
+	<string>@!</string>
+	<key>name</key>
+	<string>Wrap in Callout Tag</string>
+	<key>scope</key>
+	<string>text.xml</string>
+	<key>uuid</key>
+	<string>54DD8328-31E5-4B6C-A82A-6326AE4BD591</string>
+</dict>
+</plist>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/perl
+#
+# If you have selected text like the following, this
+# turns it into a proper ordered list: 
+#
+#  1) hey there 2) here's something else 3)blah
+
+my @lines = &lt;&gt;;
+my $lines = join('', @lines);
+
+$lines =~  s/\d\)\s*(.*?)\s*($|(?=\d\)))/&lt;listitem&gt;&lt;para&gt;$1&lt;\/para&gt;&lt;\/listitem&gt;\n/gs;
+
+print "&lt;orderedlist&gt;\n";
+print $lines;
+print "&lt;/orderedlist&gt;\n";
+
+</string>
+	<key>fallbackInput</key>
+	<string>none</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@!</string>
+	<key>name</key>
+	<string>Create Ordered List from Inline Numbers</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>text.xml</string>
+	<key>uuid</key>
+	<string>9D13EE3D-14AB-42C6-92DB-ECBD2DBEBF8B</string>
+</dict>
+</plist>

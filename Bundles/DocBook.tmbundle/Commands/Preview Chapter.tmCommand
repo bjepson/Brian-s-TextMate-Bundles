@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string># Requires the following from macports
+# docbook-xsl xmlcatmgr docbook-xml docbook-xml-4.5 docbook-xml-4.4
+
+BOOKTEMP=booktemp.$$.xml
+
+if [ "$TM_FILENAME" == "book.xml" ]; then
+  cp book.xml $BOOKTEMP
+else
+
+  cat &gt; $BOOKTEMP &lt;&lt;EOF
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"&gt;
+&lt;book id="I_book_d1e1"&gt;
+  &lt;title&gt;Preview&lt;/title&gt;
+  &lt;xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="$TM_FILENAME"/&gt;
+&lt;/book&gt;
+EOF
+
+fi
+
+# Generate the HTML
+xsltproc --xinclude --nonet --catalogs \
+ --stringparam html.stylesheet file:///Users/bjepson/Library/docbook.css \
+    http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl $BOOKTEMP \
+  | perl -pe "s#img src=\"#img src=\"file://$(pwd)/#g; s#\xa0# #g"
+
+rm $BOOKTEMP
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>^~@p</string>
+	<key>name</key>
+	<string>Preview DocBook</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>text.xml</string>
+	<key>uuid</key>
+	<string>FDA657E1-E4BA-47D0-9C11-B11EC33513C2</string>
+</dict>
+</plist>

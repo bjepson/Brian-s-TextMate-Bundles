@@ -1,0 +1,11 @@
+Bundles/DocBook.tmbundle: DocBook commands and snippets
+Bundles/XML.tmbundle:     XML customizations
+
+The XML customizations define three scope selectors that you can use for custom syntax highlighting (see TextMate>Preferences>Fonts & Colors):
+
+  index.block.xml:          Index terms. Make them nearly invisible if you'd like
+  title.block.xml:          Any title
+  sect1title.block.xml:     Any title of a sect1
+  programlisting.block.xml: A programlisting
+
+The XML customizations will also allow you to pick section 1 titles from the function index popup at the bottom of the screen.

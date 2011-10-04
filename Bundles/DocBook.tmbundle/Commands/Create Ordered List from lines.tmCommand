@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/perl
+#
+# Converts a bunch of (selected) separate lines into an ordered list.
+
+print "&lt;orderedlist&gt;\n";
+foreach(&lt;&gt;) {
+  /^(\s+)(.*?)(\s+)$/;
+  print "$1&lt;listitem&gt;&lt;para&gt;$2&lt;/para&gt;&lt;/listitem&gt;\n";
+}
+print "&lt;/orderedlist&gt;\n";
+
+</string>
+	<key>fallbackInput</key>
+	<string>none</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@!</string>
+	<key>name</key>
+	<string>Create Ordered List from lines</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>text.xml</string>
+	<key>uuid</key>
+	<string>8CBCEAF2-2205-47D0-A22C-8B7E978EE8AB</string>
+</dict>
+</plist>

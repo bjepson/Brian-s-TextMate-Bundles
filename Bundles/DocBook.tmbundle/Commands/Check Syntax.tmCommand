@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string># Runs xmllint and checks the document.
+# If you click the link, it will try to take you to
+# the offending line, but currently will do so in the
+# frontmost document, which may not be the correct one.
+#
+xmllint --postvalid --xinclude --noout --catalogs book.xml 2&gt;&amp;1 | perl -e '$x = 0; while (&lt;&gt;) { s|^((?:&lt;/?[^&gt;]+&gt;)*)(.*?):(\d+):(.*error.*)|$1&lt;a href="txmt://open?line=$3"&gt;$4&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;|; $x++; print; } print "Document validates" unless $x;'</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@!</string>
+	<key>name</key>
+	<string>Check Syntax</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>text.xml</string>
+	<key>uuid</key>
+	<string>02A05FD0-5786-4CA5-857A-526EBD7CE8A4</string>
+</dict>
+</plist>

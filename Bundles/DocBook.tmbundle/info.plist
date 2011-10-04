@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>*DocBook</string>
+	<key>ordering</key>
+	<array>
+		<string>ECAB0A24-D99E-4983-B310-ACA5AA39C787</string>
+		<string>02A05FD0-5786-4CA5-857A-526EBD7CE8A4</string>
+		<string>7C416C4E-7516-4EC3-BB40-85ADEC9A286A</string>
+		<string>1CFB479C-9F2B-4AA7-A1AA-DA43BF693F3A</string>
+		<string>5D870974-AB89-4C8D-96B1-72110CA14B78</string>
+		<string>8ACC20A2-A5FC-472A-9198-37F5A2BDAF86</string>
+		<string>21DAE08C-CA4A-4673-B0F8-9C751E725F7E</string>
+		<string>1143628A-AFD0-4A75-89E3-8E733329D425</string>
+		<string>F07F38B8-E451-4D93-A2A9-FD1F949669BA</string>
+		<string>F03E283D-E6D9-4670-8244-73B00C8356DA</string>
+		<string>54DD8328-31E5-4B6C-A82A-6326AE4BD591</string>
+		<string>6A6E66C7-D797-4044-9CA5-FE570261C83B</string>
+		<string>9D13EE3D-14AB-42C6-92DB-ECBD2DBEBF8B</string>
+		<string>8CBCEAF2-2205-47D0-A22C-8B7E978EE8AB</string>
+		<string>FDA657E1-E4BA-47D0-9C11-B11EC33513C2</string>
+	</array>
+	<key>uuid</key>
+	<string>14441195-FF92-4B35-83ED-6A3587A0AA7C</string>
+</dict>
+</plist>

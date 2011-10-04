@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/perl
+# just to remind you of some useful environment variables
+# see Help / Environment Variables for the full list
+my $line = $ENV{TM_CURRENT_LINE};
+if ($line =~ /fileref="([^"]*)"/) {
+  `qlmanage -p "$1"`;  
+}
+</string>
+	<key>fallbackInput</key>
+	<string>line</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@!</string>
+	<key>name</key>
+	<string>QuickLook Figure</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>text.xml</string>
+	<key>uuid</key>
+	<string>ECAB0A24-D99E-4983-B310-ACA5AA39C787</string>
+</dict>
+</plist>
