@@ -8,32 +8,16 @@
 	<string># Requires the following from macports
 # docbook-xsl xmlcatmgr docbook-xml docbook-xml-4.5 docbook-xml-4.4
 
-BOOKTEMP=booktemp.$$.xml
-
-if [ "$TM_FILENAME" == "book.xml" ]; then
-  cp book.xml $BOOKTEMP
-else
-
-  cat &gt; $BOOKTEMP &lt;&lt;EOF
-&lt;?xml version="1.0"?&gt;
-&lt;!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
-"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"&gt;
-&lt;book id="I_book_d1e1"&gt;
-  &lt;title&gt;Preview&lt;/title&gt;
-  &lt;xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="$TM_FILENAME"/&gt;
-&lt;/book&gt;
-EOF
-
-fi
+chapter_id=`perl -ne 'if (/&lt;chapter\s+id="([^"]*)/) { print $1, "\n"; last;}' $TM_FILENAME`
 
 # Generate the HTML
 xsltproc --xinclude --nonet --catalogs \
+ --stringparam toc.section.depth 1 \
+ --stringparam rootid "$chapter_id" \
+ --stringparam img.src.path "file://$(pwd)/" \
  --stringparam html.stylesheet file:///Users/bjepson/Library/docbook.css \
-    http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl $BOOKTEMP \
-  | perl -pe "s#img src=\"#img src=\"file://$(pwd)/#g; s#\xa0# #g"
-
-rm $BOOKTEMP
-</string>
+   http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl book.xml \
+ | perl -pe "s#\xa0# #g"</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
