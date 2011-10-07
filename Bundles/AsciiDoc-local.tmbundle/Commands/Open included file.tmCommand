@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/perl
+#
+# Opens whatever file is referred to by the include statement on the current line.
+
+use Cwd;
+my $dir = getcwd;
+
+my $line = $ENV{TM_CURRENT_LINE};
+print $line;
+if ($line =~ /^include::([^[]*)\[/) {
+  `osascript -e 'tell application "TextMate" to open "$dir/$1"'`;
+}
+
+
+</string>
+	<key>fallbackInput</key>
+	<string>line</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@!</string>
+	<key>name</key>
+	<string>Open included file</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>text.html.asciidoc</string>
+	<key>uuid</key>
+	<string>518068F7-C609-45C8-8E94-1D9CE61F1911</string>
+</dict>
+</plist>
