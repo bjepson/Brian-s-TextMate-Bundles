@@ -121,7 +121,7 @@
 					</dict>
 				</dict>
 				<key>end</key>
-				<string>&lt;title&gt;([^&lt;]*)&lt;/title&gt;</string>
+				<string>&lt;title&gt;(.*?)&lt;/title&gt;</string>
 			</dict>
 			<dict>
 				<key>captures</key>
