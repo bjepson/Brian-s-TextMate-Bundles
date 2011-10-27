@@ -1,4 +1,4 @@
-This is a collection of useful TextMate settings and bundle items to working with O'Reilly's SVN-based DocBook tool chain. You need to check this out and copy the contents into your TextMate application support directory (but check the contents of both Brian-s-TextMate-Bundles and ~/Library/Application\ Support/TextMate/ so you know what you're probably overwriting)::
+This is a collection of useful TextMate settings and bundle items to working with O'Reilly's SVN-based DocBook tool chain. You need to check this out and copy the contents into your TextMate application support directory (but check the contents of both Brian-s-TextMate-Bundles and ~/Library/Application\ Support/TextMate/ so you know what you're probably overwriting):
 
 $ cd /tmp
 $ git clone git@github.com:bjepson/Brian-s-TextMate-Bundles.git
