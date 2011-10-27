@@ -1,5 +1,26 @@
-Bundles/DocBook.tmbundle: DocBook commands and snippets
-Bundles/XML.tmbundle:     XML customizations
+This is a collection of useful TextMate settings and bundle items to working with O'Reilly's SVN-based DocBook tool chain.
+
+Bundles/DocBook.tmbundle:   DocBook commands and snippets
+Bundles/AsciiDoc.tmbundle:  I've got some AsciiDoc stuff in here, too!
+Bundles/XML.tmbundle:       XML customizations
+Bundles/asciidoc.tmbundle:  Tweaks to the asciidoc bundle (https://github.com/zuckschwerdt/asciidoc.tmbundle)
+Themes/Mac Classic.tmTheme: Customized theme for syntax highlighting (see below)
+
+To use the DocBook preview, install three packages with MacPorts:
+
+  sudo port install docbook-xml xmlcatmgr docbook-xsl
+
+You should also go into TextMate's advanced preferences and set this environment variable:
+
+Variable: SGML_CATALOG_FILES
+Value:    /opt/local/etc/xml/catalog
+
+If you'd like to use FileMerge to view SVN diffs visually, you should install fmdiff, which you can get from http://www.defraine.net/~brunod/fmdiff/. Set this environment variable in TextMate:
+
+Variable: TM_SVN_DIFF_CMD
+Value:    /usr/local/bin/fmdiff
+
+(change /usr/local/bin/fmdiff to wherever you actually installed fmdiff).
 
 The XML customizations define three scope selectors that you can use for custom syntax highlighting (see TextMate>Preferences>Fonts & Colors):
 
