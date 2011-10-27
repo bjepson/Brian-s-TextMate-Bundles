@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&amp;#8594;</string>
+	<string>&lt;phrase role="unicode"&gt;→&lt;/phrase&gt;</string>
 	<key>keyEquivalent</key>
 	<string>@!</string>
 	<key>name</key>
