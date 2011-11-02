@@ -13,8 +13,10 @@ use Cwd;
 my $dir = getcwd;
 
 my $line = $ENV{TM_CURRENT_LINE};
-if ($line =~ /xi:include[^&gt;]*href="([^"]*)"/) {
-  `osascript -e 'tell application "TextMate" to open "$dir/$1"'`;
+if ($line =~ /&lt;xi:include/ or $line =~ m#http://www.w3.org/2001/XInclude#) {
+  if ($line =~ /href="([^"]*)"/) {
+	  `osascript -e 'tell application "TextMate" to open "$dir/$1"'`;
+  }
 }
 
 

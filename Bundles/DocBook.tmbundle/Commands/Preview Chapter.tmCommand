@@ -8,7 +8,7 @@
 	<string># Requires the following from macports
 # docbook-xsl xmlcatmgr docbook-xml docbook-xml-4.5 docbook-xml-4.4
 
-chapter_id=`perl -ne 'if (/&lt;(chapter|appendix)\s+id="([^"]*)/) { print $2, "\n"; last;}' $TM_FILENAME`
+chapter_id=`perl -ne 'if (/&lt;(preface|chapter|appendix)\s+id="([^"]*)/) { print $2, "\n"; last;}' $TM_FILENAME`
 
 # Generate the HTML
 xsltproc --xinclude --nonet --catalogs \
