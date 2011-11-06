@@ -308,7 +308,7 @@
 				HTML grammar will not mark it up as invalid.
 			</string>
 			<key>match</key>
-			<string>&lt;(?![a-z/?\$!])</string>
+			<string>&lt;[^&lt;](?![a-z/?\$!])</string>
 			<key>name</key>
 			<string>meta.other.valid-bracket.asciidoc</string>
 		</dict>
@@ -494,6 +494,10 @@
 				<dict>
 					<key>include</key>
 					<string>#attribute-reference</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#xref-bracket</string>
 				</dict>
 			</array>
 		</dict>
@@ -698,6 +702,13 @@
 			<string>(##).*(\1)</string>
 			<key>name</key>
 			<string>string.unquoted.asciidoc</string>
+		</dict>
+		<key>xref-bracket</key>
+		<dict>
+			<key>match</key>
+			<string>(&lt;&lt;.*?&gt;&gt;)</string>
+			<key>name</key>
+			<string>meta.other.xref.asciidoc</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
