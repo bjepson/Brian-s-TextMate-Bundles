@@ -11,8 +11,8 @@
 
 print "&lt;orderedlist&gt;\n";
 foreach(&lt;&gt;) {
-  /^(\s+)(.*?)(\s+)$/;
-  print "$1&lt;listitem&gt;&lt;para&gt;$2&lt;/para&gt;&lt;/listitem&gt;\n";
+  /^(\s*)(.*?)(\s*)$/ || print "Couldn't parse: [$_]";
+  print "$1&lt;listitem&gt;&lt;para&gt;$2&lt;/para&gt;&lt;/listitem&gt;$3\n";
 }
 print "&lt;/orderedlist&gt;\n";
 
