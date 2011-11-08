@@ -655,7 +655,7 @@
 		<key>text-monospace</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\w)([\+`]).*(\1)(?!\w)</string>
+			<string>(?&lt;!\w)([\+`]).*?(\1)(?!\w)</string>
 			<key>name</key>
 			<string>string.interpolated.asciidoc</string>
 		</dict>
