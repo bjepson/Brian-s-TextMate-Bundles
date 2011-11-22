@@ -14,6 +14,7 @@ chapter_id=`perl -ne 'if (/&lt;(preface|chapter|appendix)\s+id="([^"]*)/) { prin
 xsltproc --xinclude --nonet --catalogs \
  --stringparam toc.section.depth 1 \
  --stringparam rootid "$chapter_id" \
+ --stringparam callout.graphics.path "file:///opt/local/share/xsl/docbook-xsl/images/callouts/" \
  --stringparam img.src.path "file://$(pwd)/" \
  --stringparam html.stylesheet file:///Users/bjepson/Library/docbook.css \
    http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl book.xml \
