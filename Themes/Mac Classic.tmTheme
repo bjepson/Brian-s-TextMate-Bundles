@@ -22,7 +22,7 @@
 				<key>lineHighlight</key>
 				<string>#00000012</string>
 				<key>selection</key>
-				<string>#4D97FF54</string>
+				<string>#7EFFFA</string>
 			</dict>
 		</dict>
 		<dict>
@@ -48,7 +48,7 @@
 				<key>background</key>
 				<string>#C8FFC2</string>
 				<key>fontStyle</key>
-				<string>bold underline</string>
+				<string>bold</string>
 				<key>foreground</key>
 				<string>#000000</string>
 			</dict>

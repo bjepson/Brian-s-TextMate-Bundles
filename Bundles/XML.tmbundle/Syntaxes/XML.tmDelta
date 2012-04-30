@@ -124,16 +124,20 @@
 				<string>&lt;title&gt;(.*?)&lt;/title&gt;</string>
 			</dict>
 			<dict>
+				<key>begin</key>
+				<string>&lt;title</string>
 				<key>captures</key>
 				<dict>
-					<key>1</key>
+					<key>0</key>
 					<dict>
 						<key>name</key>
 						<string>title.block.xml</string>
 					</dict>
 				</dict>
-				<key>match</key>
-				<string>&lt;title&gt;([^&lt;]*)&lt;/title&gt;</string>
+				<key>end</key>
+				<string>/title&gt;</string>
+				<key>name</key>
+				<string>title.block.xml</string>
 			</dict>
 			<dict>
 				<key>begin</key>
