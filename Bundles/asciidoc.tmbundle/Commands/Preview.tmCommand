@@ -9,12 +9,20 @@
   then doc="-"
   else doc="$TM_FILEPATH"
 fi
-asciidoc -a toc -a imagesdir="file://$(pwd)" -a pygments \
-  -a icons -a iconsdir=file:///usr/local/Cellar/docbook/5.0/docbook/xsl/1.76.1/images \
-  -a showcomments --out-file - "$doc" 2&gt;&amp;1 \
-  | perl -pe 's%(\w+): .*?: line ([0-9]+):%&lt;b style="color:red"&gt;$1&lt;/b&gt;: &lt;a href="txmt://open/?line=$2"&gt;line $2&lt;/a&gt;:%g'</string>
+
+#  --stringparam generate.toc "'chapter nop'"
+
+asciidoc -b docbook -a toc -a imagesdir="file://$(pwd)" -a pygments \
+  -a icons -a iconsdir=file:///usr/local/Cellar/docbook/5.0/docbook/xsl/1.76.1/images/ \
+  -a showcomments --out-file - "$doc" \
+  | xsltproc --xinclude --nonet --catalogs \
+    --stringparam html.stylesheet file://$(pwd)/css/asciidoc.css \
+    --stringparam chapter.autolabel 0 \
+    --stringparam callout.graphics.path file:///usr/local/Cellar/docbook/5.0/docbook/xsl/1.76.1/images/callouts/ \
+    http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl - \
+   | perl -pe "s#\xa0# #g"</string>
 	<key>input</key>
-	<string>selection</string>
+	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>^~@p</string>
 	<key>name</key>
