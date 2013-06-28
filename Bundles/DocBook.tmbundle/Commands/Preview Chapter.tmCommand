@@ -17,7 +17,7 @@ xsltproc --xinclude --nonet --catalogs \
  --stringparam rootid "$chapter_id" \
  --stringparam callout.graphics.path "file:///opt/local/share/xsl/docbook-xsl/images/callouts/" \
  --stringparam img.src.path "file://$(pwd)/" \
- --stringparam html.stylesheet file:///Users/bjepson/Library/docbook.css \
+ --stringparam html.stylesheet file://$(pwd)/css/docbook.css \
    http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl book.xml \
  | perl -pe "s#\xa0# #g"</string>
 	<key>input</key>
